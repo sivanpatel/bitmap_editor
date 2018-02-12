@@ -1,15 +1,17 @@
 require_relative './pixel.rb'
 
 class Bitmap
+  attr_accessor :bitmap_table
 
   def initialize(columns, rows)
     validate_coordinates(columns, rows)
     @columns = columns
     @rows = rows
+    @bitmap_table = table
   end
 
   def print
-    bitmap_table.map do |row|
+    table.map do |row|
       row.map do |pixel|
         pixel.colour
       end.join
@@ -18,7 +20,7 @@ class Bitmap
 
   private
 
-  def bitmap_table
+  def table
     Array.new(@rows) { Array.new(@columns) { Pixel.new } }
   end
 
