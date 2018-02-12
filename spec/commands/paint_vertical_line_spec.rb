@@ -8,6 +8,6 @@ describe Commands::PaintVerticalLine do
     paint_vertical_line = Commands::PaintVerticalLine.new(bitmap)
     expect(bitmap.bitmap_table[0][0]).to receive(:change_colour).with('B')
     expect(bitmap.bitmap_table[0][1]).to receive(:change_colour).with('B')
-    paint_vertical_line.run(1, 1, 2, 'B')
+    paint_vertical_line.run([1, 1, 2, 'B'])
   end
 end

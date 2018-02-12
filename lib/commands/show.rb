@@ -6,6 +6,10 @@ module Commands
     end
 
     def run
+      puts table
+    end
+
+    def table
       @bitmap.map do |row|
         row.map do |pixel|
           pixel.colour

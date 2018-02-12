@@ -5,8 +5,8 @@ module Commands
       @bitmap = bitmap.bitmap_table
     end
 
-    def run(*args)
-      pixel = @bitmap[args[0] - 1][args[1] - 1]
+    def run(args)
+      pixel = @bitmap[args[1].to_i - 1][args[0].to_i - 1]
       pixel.change_colour(args[2])
     end
   end
