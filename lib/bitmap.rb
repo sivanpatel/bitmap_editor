@@ -10,14 +10,6 @@ class Bitmap
     @bitmap_table = table
   end
 
-  def print
-    table.map do |row|
-      row.map do |pixel|
-        pixel.colour
-      end.join
-    end.join("\n")
-  end
-
   private
 
   def table
