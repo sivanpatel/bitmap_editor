@@ -11,4 +11,8 @@ class Pixel
   def change_colour(colour)
     @colour = colour
   end
+
+  def clear
+    @colour = "O"
+  end
 end
