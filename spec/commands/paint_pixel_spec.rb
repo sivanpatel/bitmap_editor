@@ -6,7 +6,6 @@ describe Commands::PaintPixel do
 
   it 'colours a pixel' do
     paint = Commands::PaintPixel.new(bitmap)
-    require "pry"; binding.pry
     expect(pixel).to receive(:change_colour).with("A")
     paint.run(1, 1, 'A')
   end

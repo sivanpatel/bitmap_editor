@@ -1,5 +1,5 @@
 module Commands
-  class Paint
+  class PaintPixel
 
     def initialize(bitmap)
       @bitmap = bitmap.bitmap_table
