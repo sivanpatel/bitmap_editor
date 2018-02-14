@@ -24,4 +24,8 @@ describe BitmapEditor do
   it 'raises an error if there is an unrecognised command' do
     expect{ bitmap_editor.run('examples/unknown.txt') }.to raise_error 'Unrecognised command'
   end
+
+  it 'raises an error if there is an unrecognized command paramter' do
+    expect { bitmap_editor.run('examples/unrecognized_command.txt') }.to raise_error 'Unrecognised command: @'
+  end
 end

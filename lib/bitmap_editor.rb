@@ -12,6 +12,7 @@ class BitmapEditor
     File.open(file).each do |line|
       line = line.chomp
       commands = line.split(" ")
+      validate_commands(commands)
       initial_command = commands.slice!(0)
       case initial_command
       when 'I'
@@ -29,6 +30,14 @@ class BitmapEditor
       else
         raise 'Unrecognised command'
       end
+    end
+  end
+
+  private
+
+  def validate_commands(commands)
+    commands.each do |command|
+      raise "Unrecognised command: #{command}" unless command.count("a-zA-Z0-9") > 0
     end
   end
 end
