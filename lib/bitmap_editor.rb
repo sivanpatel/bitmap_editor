@@ -25,6 +25,8 @@ class BitmapEditor
         Commands::PaintVerticalLine.new(@bitmap).run(commands)
       when 'H'
         Commands::PaintHorizontalLine.new(@bitmap).run(commands)
+      when nil
+        nil
       when 'S'
         Commands::Show.new(@bitmap).run
       else
