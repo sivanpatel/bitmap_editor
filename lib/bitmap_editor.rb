@@ -8,7 +8,7 @@ require_relative './commands/show'
 
 class BitmapEditor
   def run(file)
-    raise "please provide correct file" if file.nil? || !File.exists?(file)
+    raise "please provide correct file" if file.nil? || !File.exists?(file) || File.extname(file) != '.txt'
     File.open(file).each do |line|
       line = line.chomp
       commands = line.split(" ")

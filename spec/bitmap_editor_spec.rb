@@ -11,6 +11,10 @@ describe BitmapEditor do
     expect{ bitmap_editor.run('unrecognised_file.txt') }.to raise_error "please provide correct file"
   end
 
+  it 'raises an error if the file extenstion is not .txt' do
+    expect{ bitmap_editor.run('unrecognised_file.rb') }.to raise_error "please provide correct file"
+  end
+
   it 'shows the final bitmap when commanded to' do
     expect{ bitmap_editor.run('examples/show.txt') }.to output("OOOOO\nOOZZZ\nAWOOO\nOWOOO\nOWOOO\nOWOOO\n")
       .to_stdout
@@ -26,6 +30,6 @@ describe BitmapEditor do
   end
 
   it 'raises an error if there is an unrecognized command paramter' do
-    expect { bitmap_editor.run('examples/unrecognized_command.txt') }.to raise_error 'Unrecognised command: @'
+    expect { bitmap_editor.run('examples/unrecognised_command.txt') }.to raise_error 'Unrecognised command: @'
   end
 end
